@@ -1,4 +1,4 @@
-# Job Listing Dashboard
+# Job Listing Noticeboard
 
 COSC349 Assignment 1
 Developed by Hugo Baird, Cedric Stephani
