@@ -49,7 +49,29 @@ Vagrant.configure("2") do |config|
 
 
     SHELL
- end 
+  end
+
+  # Section for the database VM
+  config.vm.define "dbserver" do |dbserver|
+    #next is exclusive to the dbserver settings
+    dbserver.vm.hostname = "dbserver"
+    dbserver.vm.network "private_network", ip:"192.168.2.2"
+    dbserver.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
+    dbserver.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+     export MYSQL_PWD='insecure_mysqlroot_pw'
+     echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections
+     echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections
+     apt-get -y install mysql-server
+     echo "CREATE DATABASE assignment1;" | mysql
+     echo "CREATE USER 'webuser'@'%' IDENTIFIED BY 'insecure_db_pw';" |mysql
+     echo "GRANT ALL PRIVILEGES ON fvision.* TO 'webuser'@'%'" | mysql
+     export MYSQL_PWD='insecure_db_pw'
+     cat /vagrant/setup-database.sql | mysql -u webuser assignment1
+     sed -i'' -e '/bind-address/s/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
+     service mysql restart
+   SHELL
+  end
     
 
   # Create a private network, which allows host-only access to the machine
