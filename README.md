@@ -5,8 +5,8 @@ Developed by Hugo Baird, Cedric Stephani
 
 This application aims to give users a platform to post available job positions using a form which then gets displayed on a job dashboard. This is separated into three virtual machines, each contributing functionality through a particular component. 
 
-- First virtual machine: ??
+- First virtual machine: Job listing form
 
-- Second virtual machine: ??
+- Second virtual machine: MySQL database
 
-- Third virtual machine: ??
+- Third virtual machine: Job listing noticeboard
