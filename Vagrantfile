@@ -72,7 +72,8 @@ Vagrant.configure("2") do |config|
      service mysql restart
    SHELL
   end
-    
+
+  
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
