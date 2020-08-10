@@ -15,4 +15,9 @@ body{
     border: 1px solid black;
     padding: 2rem;
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.listing-form{
+    list-style-type: none;
 }
