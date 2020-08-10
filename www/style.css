@@ -9,15 +9,20 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.listing-form{
+.content{
     margin-top: 1rem;
     background-color: rgb(231, 231, 231);
     border: 1px solid black;
     padding: 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .listing-form{
+    width: 18rem;
+    text-align: right;
     list-style-type: none;
 }
