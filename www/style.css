@@ -28,7 +28,9 @@ body{
     margin-top: 1rem;
     background-color: rgb(231, 231, 231);
     border: 2px solid black;
-    padding: 2rem;
+    padding: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -50,7 +52,7 @@ body{
 }
 
 .button{
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     width: 10rem;
     padding: 5px;
     font-size: 13px;
@@ -64,4 +66,15 @@ body{
 
 .button:hover{
     background-color: rgb(45, 45, 136);
+}
+
+.thankyou{
+    margin-top: 0.5rem;
+    border: 1.5px solid rgb(42, 250, 1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 27rem;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(231, 231, 231);
 }
