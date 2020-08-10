@@ -1,7 +1,18 @@
 body{
-    background-color: grey;
+    background-color: rgb(8, 15, 59);
 }
 
 .header{
-    background-color: white;
+    background-color: rgb(235, 235, 235);
+    border: 1px solid black;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.listing-form{
+    margin-top: 1rem;
+    background-color: rgb(231, 231, 231);
+    border: 1px solid black;
+    padding: 2rem;
+    text-align: center;
 }
