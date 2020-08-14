@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<title>Job Listing Form</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="header">
+<div class="title"> Job Listing Form </div>
+<div class="sub-title">Submit your job advertisments here to get
+posted on the job noticeboard! </div>
+</div>
+<div class="content">
+<h3>Enter your job advertisment details here:</h3>
+<div class="listing-form">
+<li>
+Full Name: <input type="text">
+</li>
+<li>
+Location: <input type="text">
+</li>
+<li>
+Date Posted: <input style="font-size: 1rem" type="date">
+</li>
+<li>
+Job Title: <input type="text">
+</li>
+<li>
+Job Description
+<br><textarea cols="42" rows="5"></textarea>
+</li>
+</div>
+<button class="button">POST JOB</button>
+</div>
+<div class="thankyou">
+Thank you for using our service!
+</div>
+</body>
+</html>
