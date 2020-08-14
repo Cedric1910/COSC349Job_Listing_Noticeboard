@@ -13,7 +13,7 @@
     <div class="content">
       <h3>Enter your job advertisment details here:</h3>
       <div class="listing-form">
-        <form action="index.php" method="POST">
+        <form action="index.php" method="post">
           <fieldset>
             <li>
               Full Name: <input type="text" name="full_name">
@@ -31,7 +31,7 @@
               Job Description
               <br><textarea cols="42" rows="5" name="description"></textarea>
             </li>
-            <button type="submit" class="button">POST JOB</button>
+            <input type="submit" class="button" name="submit">
            </fieldset>
          </form>
       </div>
@@ -44,8 +44,8 @@
       if(isset($_POST['submit'])){
       ini_set('display_errors',true);
       error_reporting(E_ALL);
-      $db_host = '192.168.2.2';
-      $db_name = 'joblisting20';
+      $db_host = '192.168.2.3';
+      $db_name = 'joblistingdb';
       $db_user = 'dbuser';
       $db_passwd = 'joblisting20';
       $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
@@ -53,7 +53,7 @@
       $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, description)
-      VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."',('".$_POST["job_title"]."',(".$_POST["description"]."')";
+      VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."','".$_POST["job_title"]."','".$_POST["description"]."')";
         if($pdo->query($sqlquery)){
         echo "table has been updated";  
         }
