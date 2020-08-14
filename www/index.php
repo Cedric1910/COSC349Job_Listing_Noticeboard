@@ -38,17 +38,22 @@
        ini_set('display_errors',true);
        error_reporting(E_ALL);
        $db_host = '192.168.2.2';
-       $db_name = 'assignment1'
-       $db_user = 'webuser';
-       $db_passwd = 'password'
+       $db_name = 'joblisting20'
+       $db_user = 'dbuser';
+       $db_passwd = 'joblisting20'
        $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
        try{
        $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       $sqlquery = "INSERT INTO 
-       }
-       
-       }
+    $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, job_description)
+    VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."',('".$_POST["job_title"]."',(".$_POST["job_description"]."')";
+    if($pdo->query($sqlquery)){
+     echo 'table has been updated';  
+    }
+    catch(PDOException $error){
+     echo "Connection error occurred: " . $error->getMessage(); 
+    }
+    }
 
     ?>
 
