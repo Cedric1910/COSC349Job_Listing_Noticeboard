@@ -14,23 +14,25 @@
       <h3>Enter your job advertisment details here:</h3>
       <div class="listing-form">
         <form action="index.php" method="POST">
-          <li>
-            Full Name: <input type="text" name="full_name">
-          </li>
-          <li>
-            Location: <input type="text" name="location">
-          </li>
-          <li>
-            Date Posted: <input style="font-size: 1rem" type="text" name="date_posted">
-          </li>
-          <li>
-            Job Title: <input type="text" name="job_title">
-          </li>
-          <li>
-            Job Description
-            <br><textarea cols="42" rows="5" name="job_description"></textarea>
-          </li>
-          <button type="submit" class="button">POST JOB</button>
+          <fieldset>
+            <li>
+              Full Name: <input type="text" name="full_name">
+            </li>
+            <li>
+              Location: <input type="text" name="location">
+            </li>
+            <li>
+              Date Posted: <input style="font-size: 1rem" type="text" name="date_posted">
+            </li>
+            <li>
+              Job Title: <input type="text" name="job_title">
+            </li>
+            <li>
+              Job Description
+              <br><textarea cols="42" rows="5" name="description"></textarea>
+            </li>
+            <button type="submit" class="button">POST JOB</button>
+           </fieldset>
          </form>
       </div>
     </div>
@@ -50,10 +52,10 @@
       try{
       $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, job_description)
-      VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."',('".$_POST["job_title"]."',(".$_POST["job_description"]."')";
+      $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, description)
+      VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."',('".$_POST["job_title"]."',(".$_POST["description"]."')";
         if($pdo->query($sqlquery)){
-        echo 'table has been updated';  
+        echo "table has been updated";  
         }
       }catch(PDOException $error){
         echo "Connection error occurred: " . $error->getMessage(); 
