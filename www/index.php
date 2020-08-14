@@ -42,26 +42,25 @@
     </div>
     <?php
       if(isset($_POST['submit'])){
-      ini_set('display_errors',true);
-      error_reporting(E_ALL);
-      $db_host = '192.168.2.3';
-      $db_name = 'joblistingdb';
-      $db_user = 'dbuser';
-      $db_passwd = 'joblisting20';
-      $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
-      try{
-      $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, description)
-      VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."','".$_POST["job_title"]."','".$_POST["description"]."')";
-        if($pdo->query($sqlquery)){
-        echo "table has been updated";  
+        ini_set('display_errors',true);
+        error_reporting(E_ALL);
+        $db_host = '192.168.2.3';
+        $db_user = 'dbuser';
+        $db_passwd = 'joblisting20';
+        $db_name = 'joblistingdb';
+        $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
+        try{
+          $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, description)
+          VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."','".$_POST["job_title"]."','".$_POST["description"]."')";
+          if($pdo->query($sqlquery)){
+            echo 'alert("Successfully created job listing")';  
+          }
+        }catch(PDOException $error){
+          echo "Error occurred: " . $error->getMessage(); 
         }
-      }catch(PDOException $error){
-        echo "Connection error occurred: " . $error->getMessage(); 
       }
-    }
-
     ?>
   </body>
 </html>
