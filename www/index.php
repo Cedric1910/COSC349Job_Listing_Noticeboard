@@ -22,7 +22,7 @@
               Location: <input type="text" name="location">
             </li>
             <li>
-              Date Posted: <input style="font-size: 1rem" type="text" name="date_posted">
+              Date Posted: <input type="text" name="date_posted">
             </li>
             <li>
               Job Title: <input type="text" name="job_title">
@@ -55,7 +55,7 @@
           $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, description)
           VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."','".$_POST["job_title"]."','".$_POST["description"]."')";
           if($pdo->query($sqlquery)){
-            echo 'alert("Successfully created job listing")';  
+            echo '<script>alert("Successfully created job listing")</script>';  
           }
         }catch(PDOException $error){
           echo "Error occurred: " . $error->getMessage(); 
