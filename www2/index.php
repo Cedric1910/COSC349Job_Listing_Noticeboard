@@ -18,17 +18,22 @@
         <th> description </th>
       </tr>
       <?php
-         $db_host = '192.168.2.3';
-         $db_user = 'dbuser';
-         $db_passwd = 'joblisting20';
-         $db_name = 'joblistingdb';
-         $pdo_dsn = "mysql:host=$db_host;dbname=$dbname";
-         $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
-         $q = $pdo->query("SELECT * FROM JOB_LISTING");
-
-      while($row = $q->fetch()){
-      echo "<tr><td>".$row["full_name"]."<tr><td>".$row["location"]."<tr><td>".$row["date_posted"]."<tr><td>".$row["job_title"]."<tr><td>".$row["description"]."</td></tr>\n"; 
-                      }
+      if(isset($_POST['submit'])){
+      	$db_host = '192.168.2.3';
+        $db_user = 'dbuser';
+        $db_passwd = 'joblisting20';
+        $db_name = 'joblistingdb';
+        $pdo_dsn = "mysql:host=$db_host;dbname=$dbname";
+        try{
+        	$pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
+        	$q = $pdo->query("SELECT * FROM JOB_LISTING");
+        	while($row = $q->fetch()){
+      			echo "<tr><td>".$row["full_name"]."<tr><td>".$row["location"]."<tr><td>".$row["date_posted"]."<tr><td>".$row["job_title"]."<tr><td>".$row["description"]."</td></tr>\n"; 
+      		}
+        } catch(PDOException $error){
+        	echo "Connection error" . $error->getMessage(); 
+        }
+      }
      
                       ?>  
       </table>
