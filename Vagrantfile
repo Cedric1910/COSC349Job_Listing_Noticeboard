@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "webserver" do |webserver|
     #The following options are about the current webserver VM.
     webserver.vm.hostname = "webserver" #specifies the current webservers hostname.
-    webserver.vm.network "forwarded_port",guest: 80,host: 8080,host_ip: "127.0.0.1"
+    webserver.vm.network "forwarded_port",guest: 81,host: 8080,host_ip: "127.0.0.1"
     webserver.vm.network "private_network", ip: "192.168.2.2"
     webserver.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
 
@@ -50,16 +50,16 @@ Vagrant.configure("2") do |config|
   end
 
   #Creates a web server which will host the listings from the database.
-  config.vm.define "webserver" do |webserver|
+  config.vm.define "webserver2" do |webserver|
     webserver.vm.hostname = "webserver2"
-    webserver2.vm.network "forwarded_port",guest: 81,host: 8081, host_ip: "127.0.0.1"
+    webserver.vm.network "forwarded_port",guest: 80,host: 8081, host_ip: "127.0.0.1"
     webserver.vm.network "private_network", ip: "192.168.2.4" 
     webserver.vm.synced_folders ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
     webserver.vm.provision "shell", inline: <<-SHELL
      apt-get update
      apt-get install -y apache2 php libapache2-mod-php php-mysql
-     cp /vagrant/test-website.conf /etc/apache2/sites-available/
-     a2ensite test-website
+     cp /vagrant/job-listings.conf /etc/apache2/sites-available/
+     a2ensite job-listings.conf
      a2dissite 000-default
      service apache2 reload
     SHELL
