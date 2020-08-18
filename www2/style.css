@@ -29,7 +29,7 @@ body{
 .content{
     margin-top: 1rem;
     background-color: rgb(231, 231, 231);
-    border: 2px solid black;
+    border: 2px solid blue;
     padding: 3rem;
     padding-top: 1rem;
     padding-bottom: 1.5rem;
@@ -42,5 +42,18 @@ body{
     border-radius: 0.5rem;
     box-shadow: 0px 0px 11px 3px rgba(6, 5, 44, 0.75);}
 
+th {
+    text-align: left;
+ 
+}
 
+table, th, td {
+    border: 2px solid grey;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    padding: 0.2em;
+}
 
