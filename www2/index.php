@@ -33,7 +33,7 @@
         <th> Email: </th>
       </tr>
       <?php
-      	$db_host = '192.168.2.3';
+      	$db_host = '192.168.2.13';
         $db_user = 'dbuser';
         $db_passwd = 'joblisting20';
         $db_name = 'joblistingdb';

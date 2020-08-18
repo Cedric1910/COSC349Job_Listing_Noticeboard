@@ -25,14 +25,14 @@
               Date Posted: <input type="text" placeholder="DD/MM/YYYY" name="date_posted">
             </li>
             <li>
-              Job Title: <input type="text" name="job_title">
-            </li>
-            <li>
               Phone Number: <input type="text" name="phone_number">
             </li>
             <li>
               Email: <input type="email" name="email">
-            </li>
+            </li>      
+            <li>
+              Job Title: <input type="text" name="job_title">
+            </li>          
             <li>
               Job Description
               <br><textarea cols="42" rows="5" name="description"></textarea>
@@ -45,12 +45,14 @@
  
     <div class="thankyou">
       Thank you for using our service!
+      <br>
+      Job Listing Noticeboard is located <a href="http://127.0.0.1:8081/index.php"> Here </a>
     </div>
     <?php
       if(isset($_POST['submit'])){
         ini_set('display_errors',true);
         error_reporting(E_ALL);
-        $db_host = '192.168.2.3';
+        $db_host = '192.168.2.13';
         $db_user = 'dbuser';
         $db_passwd = 'joblisting20';
         $db_name = 'joblistingdb';
