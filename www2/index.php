@@ -4,24 +4,14 @@
   <head>
     <title> Job Listings Noticeboard  </title>
     <link rel="stylesheet" type="text/css" href="style.css">;
-    <style>
-      th { text-align: left; }
-
-      table, th, td {
-      border: 2px solid grey;
-      border-collapse: collapse;
-      }
-
-      th, td {
-      padding: 0.2em;
-      }
-    </style>
-
   </head>
 
   <body>
-    <h1> Job Listings:</h1>
-    <p> This shows all the jobs currently available</p>
+    <div class="header"> 
+      <div class= "title"> Current Job Listings </div>
+      <div class ="sub-title"> This shows all the jobs currently available</div> 
+    </div> 
+
     <table border="1">
       <tr>
         <th> name: </th>
