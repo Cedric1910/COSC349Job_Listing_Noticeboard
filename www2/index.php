@@ -24,11 +24,13 @@
     <p> This shows all the jobs currently available</p>
     <table border="1">
       <tr>
-        <th> name: </th>
-        <th> location: </th>
-        <th> date posted: </th>
-        <th> job title </th>
-        <th> description </th>
+        <th> Name: </th>
+        <th> Location: </th>
+        <th> Date posted: </th>
+        <th> Job title: </th>
+        <th> Description: </th>
+        <th> Phone Number: </th>
+        <th> Email: </th>
       </tr>
       <?php
       	$db_host = '192.168.2.3';
@@ -41,7 +43,7 @@
         	$pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
         	$q = $pdo->query("SELECT * FROM JOB_LISTING;");
         	while($row = $q->fetch()){
-      			echo "<tr><td>".$row["full_name"]."</td><td>".$row["location"]."</td><td>".$row["date_posted"]."</td><td>".$row["job_title"]."</td><td>".$row["description"]."</td></tr>\n"; 
+      echo "<tr><td>".$row["full_name"]."</td><td>".$row["location"]."</td><td>".$row["date_posted"]."</td><td>".$row["job_title"]."</td><td>".$row["description"]."</td><td>".$row["phone_number"]."</td><td>".$row["email"]."</td></tr>\n"; 
       		}
         } catch(PDOException $error){
         	echo "Connection error" . $error->getMessage(); 

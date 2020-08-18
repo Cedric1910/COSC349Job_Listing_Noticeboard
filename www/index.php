@@ -22,10 +22,16 @@
               Location: <input type="text" name="location">
             </li>
             <li>
-              Date Posted: <input type="text" name="date_posted">
+              Date Posted: <input type="text" placeholder="DD/MM/YYYY" name="date_posted">
             </li>
             <li>
               Job Title: <input type="text" name="job_title">
+            </li>
+            <li>
+              Phone Number: <input type="text" name="phone_number">
+            </li>
+            <li>
+              Email: <input type="email" name="email">
             </li>
             <li>
               Job Description
@@ -52,8 +58,8 @@
         try{
           $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, description)
-          VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."','".$_POST["job_title"]."','".$_POST["description"]."')";
+          $sqlquery = "INSERT INTO JOB_LISTING (full_name, location, date_posted, job_title, description, phone_number, email)
+    VALUES ('".$_POST["full_name"]."','".$_POST["location"]."','".$_POST["date_posted"]."','".$_POST["job_title"]."','".$_POST["description"]."','".$_POST["phone_number"]."','".$_POST["email"]."')";
           if($pdo->query($sqlquery)){
             echo '<script>alert("Successfully created job listing")</script>';  
           }
