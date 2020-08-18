@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(47, 56, 110);
+    http://127.0.0.1:8081/index.php
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@ body{
 }
 
 .title{
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     color: rgb(16, 16, 128);
 }
@@ -48,12 +48,13 @@ th {
 }
 
 table, th, td {
+    font-size: 20px;
     border: 2px solid grey;
     border-collapse: collapse;
     background-color: white;
 }
 
 th, td {
-    padding: 0.2em;
+    padding: 1rem;
 }
 

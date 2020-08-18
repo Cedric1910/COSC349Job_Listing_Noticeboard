@@ -3,7 +3,7 @@
 <html>
   <head>
     <title> Job Listings Noticeboard  </title>
-    <link rel="stylesheet" type="text/css" href="style.css">;
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
@@ -12,9 +12,9 @@
       <div class ="sub-title"> This shows all the jobs currently available</div> 
     </div> 
 
-    <table border="1">
+    <table border="1" bgcolor="lightgrey" bordercolor="black">
       <tr>
-        <th> Name: </th>
+        <th > Name: </th>
         <th> Location: </th>
         <th> Date posted: </th>
         <th> Job title: </th>
